@@ -4,28 +4,21 @@ var imgfile = document.getElementById('imgfile');
 imgfile.addEventListener('change', fileselect, false);
 },false);
 
- var files
-  var reader = new FileReader();
-function fileselect(ev) {
+var reader = new FileReader();
 
-  var target = ev.target;
-files = target.files;
- var file = target.files[0];
+function fileselect(ev) {
+var file = ev.target.files[0];
 reader.readAsDataURL(file);
-}
-function fileLoad() {
-  console.log(reader.result);
 }
 
 var script = function () {
 var sample= document.getElementById("textarea").value
 var zip = new JSZip();
 zip.file("sample.txt", sample);
-zip.file("sample.jpg", reader.result.split('base64,')[1], {base64: true});
-reader.addEventListener('load', fileLoad, false);
+zip.file("sample.png", reader.result.split('base64,')[1], {base64: true});
 zip.generateAsync({type:"blob"})
 .then(function(content) {
-    saveAs(content, "example.zip");
+saveAs(content, "example.zip");
 });
 }
 
