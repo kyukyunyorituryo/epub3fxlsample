@@ -6,13 +6,18 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/myscript4-2.js"></script>
+<script type="text/javascript" src="js/vkbeautify.js"></script>
+<script type="text/javascript" src="js/myscript4-5.js"></script>
 </head>
 <body>
-<label class="label label-primary">ページ方向</label>
-<label class="checkbox-inline"><input type="radio" name="radio" id="binding-rtl" value="radio1" checked="">右から左</label>
-<label class="checkbox-inline"><input type="radio" name="radio" id="binding-ltr" value="radio2">左から右</label>
-</br>
+ <label class="label label-primary">表紙画像</label>
+<input type="file" id="coverfile" name="coverfile" accept="image/png,image/jpeg">
+ <img id="cover" width="500">
+ </br>
+<label class="label label-primary">画像の横幅</label>
+<input   type="number" class="form-control" id="imgwidth" min="1" value="800"placeholder="800">
+<label class="label label-primary">画像の高さ</label>
+<input   type="number" class="form-control" id="imgheight" min="1" value="1200"placeholder="1200">
 <button id="button" >書き換え</button></br>
 <textarea class="form-control" id="textareaid" rows=20 ></textarea>
 </body>
