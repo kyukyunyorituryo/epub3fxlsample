@@ -495,17 +495,11 @@ console.log(pages);
 
 //zip圧縮
 jQuery(function($) {
-  if(!JSZip.support.blob) {
-      $("#demo-not-supported").removeClass("hidden");
-      $("#demo").hide();
-      return;
-  }
-  $("#demo").click(function () {
+  $("#publish").click(function () {
 standardOPFS=rewriteOPF();
 navigationS = rewriteNAV();
 ncxS=rewriteNCX();
 rewrite();
-//cookie();
 var zip = new JSZip();
 zip.file("mimetype", "application/epub+zip");
 var meta = zip.folder("META-INF");
